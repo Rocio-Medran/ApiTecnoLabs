@@ -7,7 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="8.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\PruebaTecnicaApi\AppModels\AppModels.csproj" />
+    <ProjectReference Include="..\..\..\PruebaTecnicaApi\Data\Data.csproj" />
+    <ProjectReference Include="..\..\..\PruebaTecnicaApi\Servicios\Servicios.csproj" />
   </ItemGroup>
 
 </Project>

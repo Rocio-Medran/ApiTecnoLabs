@@ -6,13 +6,13 @@
       "AbsoluteMoniker": "D:0:0:{CEE94AB3-406A-B96F-A21E-AC6D19C21AB6}|..\\..\\PruebaTecnicaApi\\Servicios\\Servicios.csproj|c:\\users\\rocio\\documents\\pc 2d\\pruebatecnicaapi\\servicios\\servicios\\productoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CEE94AB3-406A-B96F-A21E-AC6D19C21AB6}|..\\..\\PruebaTecnicaApi\\Servicios\\Servicios.csproj|c:\\users\\rocio\\documents\\pc 2d\\pruebatecnicaapi\\servicios\\servicios\\categoriaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{693241FB-C3E7-34B7-18D2-8477AA0637D0}|..\\..\\PruebaTecnicaApi\\Data\\Data.csproj|c:\\users\\rocio\\documents\\pc 2d\\pruebatecnicaapi\\data\\interfaces\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{693241FB-C3E7-34B7-18D2-8477AA0637D0}|..\\..\\PruebaTecnicaApi\\Data\\Data.csproj|c:\\users\\rocio\\documents\\pc 2d\\pruebatecnicaapi\\data\\repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEE94AB3-406A-B96F-A21E-AC6D19C21AB6}|..\\..\\PruebaTecnicaApi\\Servicios\\Servicios.csproj|c:\\users\\rocio\\documents\\pc 2d\\pruebatecnicaapi\\servicios\\servicios\\categoriaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BB4D3A34-079E-4F7C-8852-F25893BDCC78}|ApiTecnoLabs\\ApiTecnoLabs.csproj|c:\\users\\rocio\\documents\\pc 2d\\proyectos\\apitecnolabs\\apitecnolabs\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -44,14 +44,14 @@
               "RelativeDocumentMoniker": "..\\..\\PruebaTecnicaApi\\Servicios\\Servicios\\ProductoService.cs",
               "ToolTip": "C:\\Users\\Rocio\\Documents\\PC 2D\\PruebaTecnicaApi\\Servicios\\Servicios\\ProductoService.cs",
               "RelativeToolTip": "..\\..\\PruebaTecnicaApi\\Servicios\\Servicios\\ProductoService.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAgwCYAAABZAAAAAAAAAA==",
+              "ViewState": "AgIAABoAAAAAAAAAAAAgwCAAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-31T00:55:53.632Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "CategoriaService.cs",
               "DocumentMoniker": "C:\\Users\\Rocio\\Documents\\PC 2D\\PruebaTecnicaApi\\Servicios\\Servicios\\CategoriaService.cs",
               "RelativeDocumentMoniker": "..\\..\\PruebaTecnicaApi\\Servicios\\Servicios\\CategoriaService.cs",
@@ -64,26 +64,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Repository.cs",
               "DocumentMoniker": "C:\\Users\\Rocio\\Documents\\PC 2D\\PruebaTecnicaApi\\Data\\Repositories\\Repository.cs",
               "RelativeDocumentMoniker": "..\\..\\PruebaTecnicaApi\\Data\\Repositories\\Repository.cs",
               "ToolTip": "C:\\Users\\Rocio\\Documents\\PC 2D\\PruebaTecnicaApi\\Data\\Repositories\\Repository.cs",
               "RelativeToolTip": "..\\..\\PruebaTecnicaApi\\Data\\Repositories\\Repository.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAAwCoAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAACoAAAAAAAAAAAAmwDEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-30T00:23:52.885Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "IRepository.cs",
               "DocumentMoniker": "C:\\Users\\Rocio\\Documents\\PC 2D\\PruebaTecnicaApi\\Data\\Interfaces\\IRepository.cs",
               "RelativeDocumentMoniker": "..\\..\\PruebaTecnicaApi\\Data\\Interfaces\\IRepository.cs",
               "ToolTip": "C:\\Users\\Rocio\\Documents\\PC 2D\\PruebaTecnicaApi\\Data\\Interfaces\\IRepository.cs",
               "RelativeToolTip": "..\\..\\PruebaTecnicaApi\\Data\\Interfaces\\IRepository.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABgAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA0AAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-30T00:12:36.357Z",
               "EditorCaption": ""
