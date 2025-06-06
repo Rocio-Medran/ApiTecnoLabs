@@ -1,6 +1,7 @@
 ﻿using AppModels.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using Servicios.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace PruebaTecnicaApi.Controllers
 {
@@ -16,6 +17,7 @@ namespace PruebaTecnicaApi.Controllers
 		}
 
 		[HttpGet]
+		[AllowAnonymous]
 		public async Task<IActionResult> GetProductos()
 		{
 			try
@@ -31,6 +33,7 @@ namespace PruebaTecnicaApi.Controllers
 		}
 
 		[HttpGet("{id}")]
+		[AllowAnonymous]
 		public async Task<IActionResult> GetProducto(int id)
 		{
 			try
@@ -48,6 +51,7 @@ namespace PruebaTecnicaApi.Controllers
 		}
 
 		[HttpPost]
+		[Authorize(Roles = "Admin")]
 		public async Task<IActionResult> AddProducto([FromBody] CreateProductoDTO productoDTO)
 		{
 			try
@@ -65,6 +69,7 @@ namespace PruebaTecnicaApi.Controllers
 		}
 
 		[HttpPut("{id}")]
+		[Authorize(Roles = "Admin")]
 		public async Task<IActionResult> UpdateProducto([FromBody] UpProductoDTO productoDTO, int id)
 		{
 			try
@@ -83,6 +88,7 @@ namespace PruebaTecnicaApi.Controllers
 		}
 
 		[HttpDelete("{id}")]
+		[Authorize(Roles = "Admin")]
 		public async Task<IActionResult> DeleteProducto(int id)
 		{
 			try
