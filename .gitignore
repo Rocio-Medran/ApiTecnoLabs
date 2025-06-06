@@ -53,3 +53,12 @@ CodeCoverage/
 TestResult.xml
 nunit-*.xml
 .vs/
+# Archivos de usuario de Visual Studio
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Archivos de Rider / Resharper
+.idea/
+*.DotSettings.user
