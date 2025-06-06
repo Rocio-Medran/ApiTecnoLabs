@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Servicios.Interfaces;
 using Servicios.Servicios;
 
-namespace PruebaTecnicaApi.Controllers
+namespace ApiTecnoLabs.Controllers
 {
 	[Route("api/[controller]")]
 	[ApiController]
