@@ -1,4 +1,5 @@
 ﻿using AppModels.DTOs;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Servicios.Interfaces;
 using Servicios.Servicios;
@@ -17,6 +18,7 @@ namespace ApiTecnoLabs.Controllers
 		}
 
 		[HttpGet]
+		[Authorize(Roles = "Admin")]
 		public async Task<IActionResult> GetCategorias()
 		{
 			try
@@ -32,6 +34,7 @@ namespace ApiTecnoLabs.Controllers
 		}
 
 		[HttpGet("{id}")]
+		[Authorize(Roles = "Admin")]
 		public async Task<IActionResult> GetCategoria(int id)
 		{
 			try
@@ -49,6 +52,7 @@ namespace ApiTecnoLabs.Controllers
 		}
 
 		[HttpPost]
+		[Authorize(Roles = "Admin")]
 		public async Task<IActionResult> AddCategoria([FromBody] CreateCategoriaDTO categoriaDTO)
 		{
 			try
@@ -66,6 +70,7 @@ namespace ApiTecnoLabs.Controllers
 		}
 
 		[HttpPut("{id}")]
+		[Authorize(Roles = "Admin")]
 		public async Task<IActionResult> UpdateCategoria([FromBody] CreateCategoriaDTO categoriaDTO, int id)
 		{
 			try
@@ -84,6 +89,7 @@ namespace ApiTecnoLabs.Controllers
 		}
 
 		[HttpDelete("{id}")]
+		[Authorize(Roles = "Admin")]
 		public async Task<IActionResult> DeleteCategoria(int id)
 		{
 			try

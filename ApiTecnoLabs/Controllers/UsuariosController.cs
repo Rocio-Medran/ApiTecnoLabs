@@ -60,17 +60,5 @@ namespace ApiTecnoLabs.Controllers
 
 			return Ok(new { token });
 		}
-
-		[HttpGet("test-auth")]
-		[Authorize(Roles = "Admin")]
-		public IActionResult TestAuth()
-		{
-			var user = HttpContext.User;
-			var rol = user.Claims.FirstOrDefault(c => c.Type.Contains("role"))?.Value;
-			var email = user.Claims.FirstOrDefault(c => c.Type.Contains("email"))?.Value;
-
-			return Ok(new { message = "¡Autenticado como Admin!", email, rol });
-		}
-
 	}
 }
