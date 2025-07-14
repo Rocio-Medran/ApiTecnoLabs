@@ -45,7 +45,8 @@ namespace Data.Data
 			modelBuilder.Entity<Compra>()
                 .HasOne(c => c.Usuario)
                 .WithMany()
-                .HasForeignKey(c => c.UsuarioId);
+                .HasForeignKey(c => c.UsuarioId)
+				.OnDelete(DeleteBehavior.Restrict);
 
 			modelBuilder.Entity<Compra>()
                 .HasOne(c => c.Carrito)
