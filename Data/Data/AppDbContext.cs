@@ -35,12 +35,14 @@ namespace Data.Data
 			modelBuilder.Entity<CarritoProducto>()
 				.HasOne(cp => cp.Carrito)
 				.WithMany(c => c.CarritoProductos)
-				.HasForeignKey(cp => cp.CarritoId);
+				.HasForeignKey(cp => cp.CarritoId)
+				.OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<CarritoProducto>()
                 .HasOne(cp => cp.Producto)
 				.WithMany()
-                .HasForeignKey(cp => cp.ProductoId);
+                .HasForeignKey(cp => cp.ProductoId)
+				.OnDelete(DeleteBehavior.Restrict);
 
 			modelBuilder.Entity<Compra>()
                 .HasOne(c => c.Usuario)
@@ -51,7 +53,8 @@ namespace Data.Data
 			modelBuilder.Entity<Compra>()
                 .HasOne(c => c.Carrito)
                 .WithMany()
-                .HasForeignKey(c => c.CarritoId);
+                .HasForeignKey(c => c.CarritoId)
+				.OnDelete(DeleteBehavior.Restrict);
         }
 
 		public void SeedAdmin()
