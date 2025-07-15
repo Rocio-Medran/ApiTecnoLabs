@@ -18,13 +18,15 @@ namespace Servicios.Servicios
         private readonly IMapper _mapper;
         private readonly ICompraRepository _repository;
         private readonly ICarritoRepository _carritoRepository;
+        private readonly IInventarioService _inventarioService;
         private readonly AppDbContext _context;
 
-        public CompraService(IMapper mapper, ICompraRepository repository, ICarritoRepository carritoRepository, AppDbContext context)
+        public CompraService(IMapper mapper, ICompraRepository repository, ICarritoRepository carritoRepository, IInventarioService inventarioService, AppDbContext context)
         {
             _mapper = mapper;
             _repository = repository;
             _carritoRepository = carritoRepository;
+            _inventarioService = inventarioService;
             _context = context;
         }
 
@@ -46,6 +48,7 @@ namespace Servicios.Servicios
             if (carrito == null) throw new ArgumentException("Carrito no encontrado");
 
             carrito.Finalizado = true;
+            _context.Entry(carrito).State = EntityState.Modified;
 
             decimal total = carrito.CarritoProductos.Sum(cp => cp.Producto.Precio * cp.Cantidad);
 
@@ -60,17 +63,9 @@ namespace Servicios.Servicios
 
             await _repository.AddCompraAsync(compra);
 
-            foreach (var item in carrito.CarritoProductos)
-            {
-                item.Producto.Stock -= item.Cantidad;
-                _context.Entry(item.Producto).State = EntityState.Modified;
-            }
-
-            _context.Entry(carrito).State = EntityState.Modified;
-            
+            await _inventarioService.DescontarStock(carrito.CarritoProductos);
 
             await _context.SaveChangesAsync();
-
             return _mapper.Map<CompraDTO>(compra);
         }
 

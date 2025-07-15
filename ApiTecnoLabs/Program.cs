@@ -34,6 +34,7 @@ builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<ICarritoRepository, CarritoRepository>();
 builder.Services.AddScoped<ICompraService, CompraService>();
 builder.Services.AddScoped<ICompraRepository, CompraRepository>();
+builder.Services.AddScoped<IInventarioService, InvetarioService>();
 
 // Leer la conexion desde appsettings.json
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
