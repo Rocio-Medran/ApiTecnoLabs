@@ -36,6 +36,7 @@ namespace Data.Repositories
                 .AsNoTracking()
                 .Include(c => c.CarritoProductos)
                     .ThenInclude(cp => cp.Producto)
+                .Include(c => c.Usuario)
                 .FirstOrDefaultAsync(c => c.Id == id);
         }
     }

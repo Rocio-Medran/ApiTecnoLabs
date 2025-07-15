@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using AppModels;
 using AppModels.Entities;
 using AppModels.DTOs;
+using System.Runtime.ConstrainedExecution;
 
 namespace AppModels.Mapping
 {
@@ -28,20 +29,20 @@ namespace AppModels.Mapping
 			CreateMap<Usuario, UsuarioLoginDTO>().ReverseMap();
 			CreateMap<Usuario, UsuarioDTO>().ReverseMap();
 
-            CreateMap<Carrito, CarritoDTO>()
-            .ForMember(dest => dest.Productos, opt => opt.MapFrom(src =>
-                src.CarritoProductos.Select(cp => new CarritoProductoDTO
-                {
+			CreateMap<Carrito, CarritoDTO>()
+			.ForMember(dest => dest.Productos, opt => opt.MapFrom(src =>
+				src.CarritoProductos.Select(cp => new CarritoProductoDTO
+				{
 					Id = cp.Id,
-                    ProductoId = cp.ProductoId,
-                    NombreProducto = cp.Producto != null ? cp.Producto.Nombre : "",
-                    Cantidad = cp.Cantidad,
-                    PrecioUnitario = cp.PrecioUnitario
-                }).ToList()
-            ));
-            CreateMap<CreateCarritoDTO, Carrito>()
-            .ForMember(dest => dest.FechaCreacion, opt => opt.MapFrom(_ => DateTime.Now))
-            .ForMember(dest => dest.Finalizado, opt => opt.MapFrom(_ => false));
+					ProductoId = cp.ProductoId,
+					NombreProducto = cp.Producto != null ? cp.Producto.Nombre : "",
+					Cantidad = cp.Cantidad,
+					PrecioUnitario = cp.PrecioUnitario
+				}).ToList()
+			));
+			CreateMap<CreateCarritoDTO, Carrito>()
+			.ForMember(dest => dest.FechaCreacion, opt => opt.MapFrom(_ => DateTime.Now))
+			.ForMember(dest => dest.Finalizado, opt => opt.MapFrom(_ => false));
 			CreateMap<Carrito, CreateCarritoDTO>();
 			CreateMap<Carrito, UpCarritoDTO>().ReverseMap();
 
@@ -49,8 +50,13 @@ namespace AppModels.Mapping
 				.ForMember(dest => dest.PrecioUnitario, opt => opt.MapFrom(src => src.Producto.Precio))
 				.ForMember(dest => dest.NombreProducto, opt => opt.MapFrom(src => src.Producto.Nombre)).ReverseMap();
 			CreateMap<CarritoProductoDTO, CarritoProducto>();
-            CreateMap<CarritoProducto, CreateCarritoProductoDTO>().ReverseMap();
+			CreateMap<CarritoProducto, CreateCarritoProductoDTO>().ReverseMap();
 			CreateMap<CarritoProducto, UpCarritoProductoDTO>().ReverseMap();
+
+            CreateMap<Compra, CompraDTO>()
+				.ForMember(dest => dest.Productos, opt => opt.MapFrom(src => src.Carrito.CarritoProductos))
+				.ReverseMap();
+
         }
-	}
+    }
 }

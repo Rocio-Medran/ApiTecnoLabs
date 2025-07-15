@@ -32,6 +32,8 @@ builder.Services.AddScoped<ICarritoService, CarritoService>();
 builder.Services.AddScoped<ICarritoProductoService, CarritoProductoService>();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<ICarritoRepository, CarritoRepository>();
+builder.Services.AddScoped<ICompraService, CompraService>();
+builder.Services.AddScoped<ICompraRepository, CompraRepository>();
 
 // Leer la conexion desde appsettings.json
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
